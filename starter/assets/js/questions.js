@@ -7,3 +7,27 @@ document.querySelector("#choices")
 document.querySelector("#choices")
 document.querySelector("#choices")
 
+//question arrays
+
+var questions = [
+    {
+        qTitle:
+            qChoice
+    qAnswer
+    },
+    {
+        qTitle:
+            qChoice
+    qAnswer
+    },
+    {
+        qTitle:
+            qChoice
+    qAnswer
+    },
+    {
+        qTitle:
+            qChoice
+    qAnswer
+    },
+]
