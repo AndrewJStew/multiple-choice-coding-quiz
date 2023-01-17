@@ -3,7 +3,7 @@
 var score = 0
 var timeLeft = 75
 var timeInterval
-var Qindex = 0;
+var qIndex = 0;
 //var startButton = document.querySelector("#start"); don't think I need this
 
 
@@ -27,3 +27,46 @@ function startQuiz() {
 
 //new event listener to start quiz
 document.getElementById("start").addEventListener("click", startQuiz);
+
+//start timer by using function
+function startTimer() {
+    timeInterval = setInterval(function () {
+        timeLeft--;
+        document.getElementById("time").textContent = timeLeft;
+        if (timeLeft === 0) {
+            clearInterval(timeInterval);
+            endQuiz();
+        }
+    }, 1000);
+}
+
+// display questions function 
+//start by getting question objects from the array
+
+var questionObjects = questions[qIndex];
+
+var questionTitle = document.getElementById("question-title");
+title.textContent = questionObjects.title;
+
+var qOptions = document.getElementById("choices");
+qOptions.innerHTML = "";
+
+questionObjects.qOptions.forEach(function (choice, i) {
+    var choiceBtn = document.createElement("button");
+    choiceBtn.setAttribute("class", "choice");
+    choiceBtn.setAttribute("value", choice);
+
+    choiceBtn.textContent = i + 1 + ". " + choice;
+
+    choiceBtn.onclick = questionClick;
+});
+}
+
+//question choices function - what happens when users click on their choice
+
+function qclick() {
+    if (this.value === questions[qIndex].answer) {
+        score++;
+        var playAudio = 
+    }
+}
